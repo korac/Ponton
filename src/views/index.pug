@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.app
+    include topbar.pug
+    div.app-content
+      include drawer.pug
+      div.chat-room
+        div.message-history-container
+        div.new-message-container
+          input(placeholder='Type a message..')
+          a.send-button SEND
+    
