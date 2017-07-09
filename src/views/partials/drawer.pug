@@ -1,0 +1,11 @@
+div.drawer
+    div.drawer__header
+        h2 PONTON
+        p Connect with your friends
+    div.drawer-main
+        div.drawer-main__header
+            h2 Search Contacts
+            hr
+        div.drawer-main__list
+            each friend in friends 
+                a.drawer-list__item= friend.name

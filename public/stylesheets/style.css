@@ -46,22 +46,41 @@ body {
 .drawer {
   width: 280px;
   padding: 20px 0;
-  background-color: #6ce9f5;
+  /*background-color: #ff766f;*/
+  background-color: #02c7d9;
+}
+
+.drawer__header {
+  padding: 0 30px 15px 30px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .drawer__header > h2 {
   margin: 0;
-  color: #fff;
-  text-align: center;
 }
 
-.drawer__header > hr {
+.drawer__header > p {
+  margin: 6px 0;
+}
+
+.drawer-main__header {
+  margin: 20px 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.drawer-main__header > h2 {
+  margin: 15px 0;
+}
+
+.drawer-main__header > hr {
     border-top: 1px;
     border-color: rgba(255,255,255,0.7);
-    margin: 15px 30px;
+    width: 80%;
 }
 
-.drawer_list_item {
+.drawer-list__item {
   display: flex;
   align-items: center;
   padding: 15px 30px;
@@ -72,7 +91,7 @@ body {
   cursor: pointer;
 }
 
-.drawer_list_item:hover {
+.drawer-list__item:hover {
   background-color: rgba(0,0,0, 0.05);
 }
 
@@ -81,7 +100,8 @@ body {
   flex-direction: column;
   flex-grow: 1;
   padding: 30px;
-  background-color: #f9f9f9;
+  /*background-color: #f9f9f9;*/
+  background: url('../images/geometry_background.png');
 }
 
 .message-history-container {
