@@ -5,7 +5,9 @@ exports.new = function(req, res, next) {
 }
 
 // Create a new user session (user is logged in)
-exports.create = function(req, res, next) {}
+exports.create = function(req, res, next) {
+    console.log(req.body);
+}
 
 // Destroy a current session (user logout)
 exports.destroy = function(req, res, next) {}
