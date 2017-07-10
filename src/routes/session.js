@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var Session = require('../controllers/sessionsController');
+var SessionController = require('../controllers/sessionsController');
 
-router.get('/login', Session.new);
-router.post('/login', Session.create);
+router.get('/login', SessionController.new);
+router.post('/login', SessionController.create);
+
+// router.get('/signin', SessionController)
 
 module.exports = router;

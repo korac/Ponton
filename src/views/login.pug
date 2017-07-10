@@ -9,13 +9,13 @@ block login
                         div.form__header
                             h2 Ponton
                         div.form__inputs
-                                div.form__group
-                                    i(class="material-icons icon") account_circle
-                                    div.user-form__input
-                                        input(class="username" id="user_username" name="user[username]" placeholder="username" autocomplete="true")
-                                div.form__group
-                                    i(class="material-icons icon") lock       
-                                    div.user-form__input
-                                        input(class="password" id="user_password" name="user[password]" placeholder="password" type="password")
+                            div.form__group
+                                i(class="material-icons icon") account_circle
+                                div.user-form__input
+                                    input(class="email" id="user_username" name="user[email]" placeholder="email" autofocus="true" autocomplete="true")
+                            div.form__group
+                                i(class="material-icons icon") lock
+                                div.user-form__input
+                                    input(class="password" id="user_password" name="user[password]" placeholder="password" type="password")
                     div.form__submit
                         input(id="btn-login" type="submit" value="Log in to Ponton" disabled="true" data-action="login-user")
