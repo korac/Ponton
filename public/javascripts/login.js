@@ -1,4 +1,4 @@
-$(document).on('input', '#login-form input.username, #login-form input.password', function() {
+$(document).on('input', '#login-form input.email, #login-form input.password', function() {
     if (checkIfFormIsValid()) {
         setButtonActive()
     } else {
@@ -7,10 +7,10 @@ $(document).on('input', '#login-form input.username, #login-form input.password'
 });
 
 function checkIfFormIsValid() {
-    var username = $('#login-form input.username').val();
+    var email = $('#login-form input.email').val();
     var password = $('#login-form input.password').val();
 
-    if(username && password && password.length >= 6) {
+    if(email && password && password.length >= 6) {
         return true;
     }
 

@@ -1,13 +1,14 @@
 
 // Return a form for creating a new user session (User login)
-exports.new = function(req, res, next) {
-    res.render('login', { title: 'Login | Ponton' });
-}
+exports.new = function (req, res, next) {
+  res.render('login', {title: 'Login | Ponton'});
+};
 
 // Create a new user session (user is logged in)
-exports.create = function(req, res, next) {
-    console.log(req.body);
-}
+exports.create = function (req, res, next) {
+  console.log(req.body);
+};
 
 // Destroy a current session (user logout)
-exports.destroy = function(req, res, next) {}
+exports.destroy = function (req, res, next) {
+};

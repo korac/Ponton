@@ -3,13 +3,13 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
     var friend_list = [
-      { name: 'Ivan Matas', username: 'matas@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Goran Bogovac', username: 'boggy@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Jakov Raos', username: 'rale@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Luka Ćurin', username: 'djuro@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Stjepan Livačić', username: 'scepo@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Duje Ančić', username: 'ancic@gmail.com', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Luka Drezga', username: 'drezga@gmail.com', createdAt: new Date(), updatedAt: new Date() }
+      { name: 'Ivan Matas', email: 'matas@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Goran Bogovac', email: 'boggy@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Jakov Raos', email: 'rale@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Luka Ćurin', email: 'djuro@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Stjepan Livačić', email: 'scepo@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Duje Ančić', email: 'ancic@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Luka Drezga', email: 'drezga@gmail.com', password: 'password', createdAt: new Date(), updatedAt: new Date() }
     ];
     
     return queryInterface.bulkInsert('Users', friend_list, {});
