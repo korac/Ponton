@@ -4,7 +4,7 @@ block signup
     div.app
         div.session-page.signup-page
             div.session-page__content
-                form#signup-form
+                form(id="signup-form" action="/signup" method="POST")
                     div.form__content
                         div.form__header
                             h2 Ponton
@@ -12,7 +12,7 @@ block signup
                             div.form__group
                                 i(class="material-icons icon") person
                                 div.user-form__input
-                                    input(class="name" id="user_name" name="user[name]" placeholder="name" type="text" autofocus="true")
+                                    input(class="name" id="user_name" name="user[name]" placeholder="name" type="text" autofocus="true" autocomplete="false")
                             div.form__group
                                 i(class="material-icons icon") mail
                                 div.user-form__input
