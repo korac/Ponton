@@ -1,4 +1,29 @@
 extends layout
 
 block signup
-    h2  Signup
+    div.app
+        div.session-page.signup-page
+            div.session-page__content
+                form#signup-form
+                    div.form__content
+                        div.form__header
+                            h2 Ponton
+                        div.form__inputs
+                            div.form__group
+                                i(class="material-icons icon") person
+                                div.user-form__input
+                                    input(class="name" id="user_name" name="user[name]" placeholder="name" type="text" autofocus="true")
+                            div.form__group
+                                i(class="material-icons icon") mail
+                                div.user-form__input
+                                    input(class="email" id="user_username" name="user[email]" placeholder="email")
+                            div.form__group
+                                i(class="material-icons icon") lock
+                                div.user-form__input
+                                    input(class="password" id="user_password" name="user[password]" placeholder="password (min 6 characters)" type="password")
+                            div.form__group
+                                i(class="material-icons icon") lock_outline
+                                div.user-form__input
+                                    input(class="password-confirmation" id="user_password_confirmation" name="user[password_confirmation]" placeholder="confirm password (min 6 characters)" type="password")
+                    div.form__submit
+                        input(id="btn-signup" type="submit" value="Sign up to Ponton" disabled="true" data-action="signup-user")
