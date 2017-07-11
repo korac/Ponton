@@ -22,8 +22,26 @@ $(document).on('input', '#signup-form input.password, #signup-form input.passwor
   } else {
     $passConf.parent().addClass('input--alert');
   }
-
 });
+
+// $(document).on('click', '[data-action="signup-user"]', function(e) {
+//   e.preventDefault();
+//
+//   var formData = $('#signup-form').serialize();
+//   var submitForm = $.ajax({
+//     url: 'http://localhost:3000/signup',
+//     method: 'POST',
+//     data: formData,
+//     dataType: 'json'
+//   });
+//
+//   submitForm.done(function(response) {
+//     // TODO - if user is authenticated, redirect to main page
+//     window.location = 'http://localhost:3000/';
+//     response.success ? toastr.success(response.message) : toastr.error(response.message);
+//   });
+//
+// });
 
 function checkIfFormIsValid() {
   var name = $('#signup-form input.name').val();

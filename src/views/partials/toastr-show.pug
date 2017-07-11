@@ -1,0 +1,9 @@
+if (messages.success)
+    script.
+      toastr.success('#{messages.success}')
+else if (messages.error)
+    script.
+      toastr.error('#{messages.error}')
+else if (messages.info)
+    script.
+      toastr.info('#{messages.info}')

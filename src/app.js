@@ -4,6 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('express-flash');
+var expressSession = require('express-session');
+var toastr = require('express-toastr');
 
 var main = require('./routes/main');
 var users = require('./routes/users');
@@ -20,8 +23,15 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(__dirname + '/../public'));
+app.use(cookieParser('secret'));
+app.use(expressSession({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
+app.use(flash());
+app.use(toastr());
 
 app.use('/', main);
 app.use('/users', users);

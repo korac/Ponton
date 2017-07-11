@@ -3,10 +3,12 @@ html
     head
         title= title
         link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css")
         link(rel='stylesheet', href='../stylesheets/normalize.css')
         link(rel='stylesheet', href='../stylesheets/style.css')
         link(rel='stylesheet', href='../stylesheets/session.css')
         script(src='../javascripts/vendor/jquery-3.2.1.min.js')
+        script(src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js")
         script(src='../javascripts/helpers.js')
         script(src='../javascripts/login.js')
         script(src='../javascripts/signup.js')
@@ -14,3 +16,4 @@ html
         block content
         block login
         block signup
+        include partials/toastr-show
