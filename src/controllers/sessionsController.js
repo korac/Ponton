@@ -1,3 +1,4 @@
+var User = require('../../models').User;
 
 // Return a form for creating a new user session (User login)
 exports.new = function (req, res, next) {
@@ -6,7 +7,7 @@ exports.new = function (req, res, next) {
 
 // Create a new user session (user is logged in)
 exports.create = function (req, res, next) {
-  console.log(req.body);
+  User.authenticateUser(req.body['user[email]'], req.body['user[password]']);
 };
 
 // Destroy a current session (user logout)
