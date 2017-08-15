@@ -11,6 +11,6 @@ __App.__Helpers = {
     $(buttonId).addClass('btn--active').removeAttr('disabled');
   },
   disableButton: function (buttonId) {
-    $(buttonId).removeClass('btn--active').attr('disabled');
+    $(buttonId).removeClass('btn--active').attr('disabled', 'true');
   }
 };

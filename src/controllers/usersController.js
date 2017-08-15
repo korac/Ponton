@@ -8,16 +8,27 @@ exports.new = function(req, res, next) {
 // Create a new user
 exports.create = function(req, res, next) {
   req.check('user[email]', 'Invalid email address').isEmail();
-  // User.create({ name: req.body['user[name]'], email: req.body['user[email]'], password: req.body['user[password]']})
-  //     .then(function () {
-  //       req.flash('success', 'You have successfully signed up');
-  //       res.redirect(301, '/');
-  //     })
-  //     .catch(function (error) {
-  //       var errorMessage = error.name === 'SequelizeUniqueConstraintError' ? 'Given email is already in use' : error.name;
-  //       req.flash('error', errorMessage);
-  //       res.redirect(301, '/signup');
-  //     });
+  req.check('user[password]', 'Invalid password').equals(req.body['user[password_confirmation]']);
+
+  var errors = req.validationErrors();
+  if (errors) {
+    errors.forEach(function (error) {
+      req.flash('error', error.msg);
+    });
+    res.redirect(301, '/signup');
+    return;
+  }
+
+  User.create({ name: req.body['user[name]'], email: req.body['user[email]'], password: req.body['user[password]']})
+      .then(function () {
+        req.flash('success', 'You have successfully signed up. Log in to start with Ponton');
+        res.redirect(301, '/session/login');
+      })
+      .catch(function (error) {
+        var errorMessage = error.name === 'SequelizeUniqueConstraintError' ? 'Given email is already in use' : error.name;
+        req.flash('error', errorMessage);
+        res.redirect(301, '/signup');
+      });
 };
 
 // Return a form for updating a current user
