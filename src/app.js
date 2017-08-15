@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('express-flash');
+var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var toastr = require('express-toastr');
 
@@ -23,12 +24,13 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(express.static(__dirname + '/../public'));
 app.use(cookieParser('secret'));
 app.use(expressSession({
   secret: 'secret',
-  saveUninitialized: true,
-  resave: true
+  saveUninitialized: false,
+  resave: false
 }));
 app.use(flash());
 app.use(toastr());
