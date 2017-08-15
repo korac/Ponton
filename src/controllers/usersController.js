@@ -7,17 +7,17 @@ exports.new = function(req, res, next) {
 
 // Create a new user
 exports.create = function(req, res, next) {
-  User.create({ name: req.body['user[name]'], email: req.body['user[email]'], password: req.body['user[password]']})
-      .then(function () {
-        req.flash('success', 'You have successfully signed up');
-        res.redirect(301, '/');
-      })
-      .catch(function (error) {
-        var errorMessage = error.name === 'SequelizeUniqueConstraintError' ? 'Given email is already in use' : error.name
-        // res.send(JSON.stringify({ success: false, message: errorMessage }));
-        req.flash('error', errorMessage);
-        res.redirect(301, '/signup');
-      });
+  req.check('user[email]', 'Invalid email address').isEmail();
+  // User.create({ name: req.body['user[name]'], email: req.body['user[email]'], password: req.body['user[password]']})
+  //     .then(function () {
+  //       req.flash('success', 'You have successfully signed up');
+  //       res.redirect(301, '/');
+  //     })
+  //     .catch(function (error) {
+  //       var errorMessage = error.name === 'SequelizeUniqueConstraintError' ? 'Given email is already in use' : error.name;
+  //       req.flash('error', errorMessage);
+  //       res.redirect(301, '/signup');
+  //     });
 };
 
 // Return a form for updating a current user
@@ -30,7 +30,7 @@ exports.update = function(req, res, next) {};
 // Implement Signup layout [✓]
 // Connect it to the UserController (create new User record in the db) [✓]
 // Off topic: login form - submit it via default form behavior, not from script ($.ajax) []
-// Hash the password before saving the record []
+// Hash the password before saving the record [✓]
 // If everything is alright, redirect to /login path []
 
 // TODO - next 2
