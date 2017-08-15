@@ -42,7 +42,7 @@ exports.update = function(req, res, next) {};
 // Connect it to the UserController (create new User record in the db) [✓]
 // Off topic: login form - submit it via default form behavior, not from script ($.ajax) []
 // Hash the password before saving the record [✓]
-// If everything is alright, redirect to /login path []
+// If everything is alright, redirect to /login path [✓]
 
 // TODO - next 2
 // Implement Login authentication []
