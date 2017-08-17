@@ -56,7 +56,11 @@ module.exports = function(sequelize, DataTypes) {
       bcrypt.hash(password, _this.salt, null, function (err, hash) {
         if (err) { throw err; }
         console.log(_this.password === hash);
-        resolve(_this.password === hash);
+        if(_this.password === hash) {
+          resolve();
+        } else {
+          reject();
+        }
       });
     });
   };
