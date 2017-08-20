@@ -33,21 +33,24 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.authenticateUser = function(email, password) {
-    User.find({ where: { email: email } })
-        .then(function(user) {
-          if (!user) {
-            return;
-          }
+    return new Promise(function(resolve, reject) {
+      User.find({ where: { email: email } })
+          .then(function(user) {
+            if (!user) {
+              return;
+            }
 
-          user.matchPassword(password)
-              .then(function () {
-                console.log('TOCNA JE SIFRA');
-              })
-              .catch(function (error) {
-                console.log('NETOCNA JE SIFRA :(');
-              });
-        });
-
+            user.matchPassword(password)
+                .then(function () {
+                  console.log('TOCNA JE SIFRA');
+                   resolve(user);
+                })
+                .catch(function () {
+                  console.log('NETOCNA JE SIFRA :(');
+                  reject();
+                });
+          });
+    });
   };
 
   User.prototype.matchPassword = function(password) {
