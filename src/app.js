@@ -9,6 +9,7 @@ var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var toastr = require('express-toastr');
 
+
 var main = require('./routes/main');
 var users = require('./routes/users');
 var session = require('./routes/session');
@@ -28,7 +29,7 @@ app.use(expressValidator());
 app.use(express.static(__dirname + '/../public'));
 app.use(cookieParser('secret'));
 app.use(expressSession({
-  secret: 'secret',
+  secret: 'secret', // <--------------- change it, store the value in the variable, and into gitignored filed
   saveUninitialized: false,
   resave: false
 }));
