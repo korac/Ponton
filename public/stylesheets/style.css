@@ -44,14 +44,14 @@ body {
 }
 
 .drawer {
+  display: flex;
+  flex-direction: column;
   width: 280px;
-  padding: 20px 0;
-  /*background-color: #ff766f;*/
   background-color: #02c7d9;
 }
 
 .drawer__header {
-  padding: 0 30px 15px 30px;
+  padding: 20px 30px;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -62,6 +62,10 @@ body {
 
 .drawer__header > p {
   margin: 6px 0;
+}
+
+.drawer-main {
+  flex-grow: 1;
 }
 
 .drawer-main__header {
@@ -93,6 +97,11 @@ body {
 
 .drawer-list__item:hover {
   background-color: rgba(0,0,0, 0.05);
+}
+
+.drawer__footer {
+  padding: 20px 0;
+  background-color: rgba(0,0,0, 0.25);
 }
 
 .chat-room {
