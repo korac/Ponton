@@ -14,7 +14,7 @@
 
 .session-page .form__content {
     width: 400px;
-    padding: 40px;
+    padding: 40px 40px 22px 40px;
 }
 
 .session-page .form__header {
@@ -87,4 +87,9 @@
     background-color: #ffd16f;
     color: #fff;
     cursor: pointer;
+}
+
+.session-page .form__redirect {
+    margin-top: 16px;
+    text-align: right;
 }

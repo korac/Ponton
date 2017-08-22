@@ -8,6 +8,7 @@ var flash = require('express-flash');
 var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var toastr = require('express-toastr');
+var passport = require('passport');
 
 
 var main = require('./routes/main');
@@ -33,6 +34,8 @@ app.use(expressSession({
   saveUninitialized: false,
   resave: false
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 app.use(toastr());
 

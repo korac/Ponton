@@ -2,6 +2,11 @@ var User = require('../../models').User;
 
 // Return a form for creating a new user (User signup)
 exports.new = function(req, res, next) {
+  if(req.isAuthenticated()) {
+    res.redirect('/');
+    return;
+  }
+
   res.render('signup', { title: 'Signup | Ponton' });
 };
 
