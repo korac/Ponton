@@ -17,3 +17,6 @@ typings/
 
 # Local files
 todos.txt
+
+# Config
+config/session-config.js
