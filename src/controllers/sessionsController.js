@@ -2,11 +2,6 @@ var User = require('../../models').User;
 
 // Return a form for creating a new user session (User login)
 exports.new = function (req, res, next) {
-  if(req.isAuthenticated()) {
-    res.redirect('/');
-    return;
-  }
-
   res.render('login', {title: 'Login | Ponton'});
 };
 
@@ -27,5 +22,5 @@ exports.create = function (req, res, next) {
 exports.destroy = function (req, res, next) {
   req.logOut();
   req.session.destroy();
-  res.redirect('/session/login');
+  res.redirect('/login');
 };

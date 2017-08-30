@@ -9,11 +9,11 @@ var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 var toastr = require('express-toastr');
 var passport = require('passport');
+var sessionConfig = require('../config/session-config');
 
-
-var main = require('./routes/main');
-var users = require('./routes/users');
-var session = require('./routes/session');
+var routes = require('./routes');
+// var users = require('./routes/users');
+// var session = require('./routes/session');
 
 var app = express();
 
@@ -30,7 +30,7 @@ app.use(expressValidator());
 app.use(express.static(__dirname + '/../public'));
 app.use(cookieParser('secret'));
 app.use(expressSession({
-  secret: 'secret', // <--------------- change it, store the value in the variable, and into gitignored filed
+  secret: sessionConfig.secret,
   saveUninitialized: false,
   resave: false
 }));
@@ -39,9 +39,7 @@ app.use(passport.session());
 app.use(flash());
 app.use(toastr());
 
-app.use('/', main);
-app.use('/users', users);
-app.use('/session', session);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

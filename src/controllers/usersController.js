@@ -2,11 +2,6 @@ var User = require('../../models').User;
 
 // Return a form for creating a new user (User signup)
 exports.new = function(req, res, next) {
-  if(req.isAuthenticated()) {
-    res.redirect('/');
-    return;
-  }
-
   res.render('signup', { title: 'Signup | Ponton' });
 };
 
@@ -42,16 +37,7 @@ exports.edit = function(req, res, next) {};
 // Update a current user
 exports.update = function(req, res, next) {};
 
-// TODO - next
-// Implement Signup layout [✓]
-// Connect it to the UserController (create new User record in the db) [✓]
-// Off topic: login form - submit it via default form behavior, not from script ($.ajax) []
-// Hash the password before saving the record [✓]
-// If everything is alright, redirect to /login path [✓]
 
-// TODO - next 2
-// Implement Login authentication []
-// Take req.body params, check if a given email exists (if it does, proceed) []
-// Check the password - hash it and compare it to corresponding one (implement the method) []
-// If everything is alright, set up a user session (CHECK FOR SESSIONS IN NODE/EXPRESS) []
-// Redirect to root path []
+// TODO BIG! - review the authentication logic for login and signup (check TODO-2)
+// TODO - refactor the authentication logic - approach it more in Node/Express style
+// TODO - take some time in refactoring and make it well and sturctured
