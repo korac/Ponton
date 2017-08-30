@@ -12,8 +12,6 @@ var passport = require('passport');
 var sessionConfig = require('../config/session-config');
 
 var routes = require('./routes');
-// var users = require('./routes/users');
-// var session = require('./routes/session');
 
 var app = express();
 
