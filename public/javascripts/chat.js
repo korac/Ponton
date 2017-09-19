@@ -11,7 +11,8 @@ socket.on('chat', function (data) {
   console.log(data.sender +': ' + data.message);
 });
 
-$('.new-message-container .send-button').keypress(function(e) {
+// TODO - Glupa implementacija -> nađi bolji nacin!!
+$(document).keypress(function(e) {
   var key = e.which;
   if (key === 13) {
     emitMessage();

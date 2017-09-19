@@ -10,4 +10,7 @@ div.drawer
             each friend in friends
                 a.drawer-list__item= friend.name
     div.drawer__footer
+        a(class='drawer-list__item item__user-info')
+            span(class='user-name')= user.name
+            span(class='user-email')= user.email
         a(href='/logout' class='drawer-list__item') Log out

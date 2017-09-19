@@ -22,7 +22,7 @@ exports.create = function(req, res, next) {
   User.create({ name: req.body['user[name]'], email: req.body['user[email]'], password: req.body['user[password]']})
       .then(function () {
         req.flash('success', 'You have successfully signed up. Log in to start with Ponton');
-        res.redirect(301, '/session/login');
+        res.redirect(301, '/login');
       })
       .catch(function (error) {
         var errorMessage = error.name === 'SequelizeUniqueConstraintError' ? 'Given email is already in use' : error.name;
